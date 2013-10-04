@@ -12,6 +12,7 @@
 
 {
     CALayer *_animationLayer;
+    CABasicAnimation *_animation;
     CFTimeInterval _duration;
 }
 
@@ -23,6 +24,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        [self customInitialize];
     }
     
     return self;
@@ -33,13 +35,19 @@
     CGRect indicatorFrame = CGRectMake(0, 0, image.size.width, image.size.height);
     self = [super initWithFrame:indicatorFrame];
     if (self) {
-        [self setActivityIndicatorImage:image];
+        [self customInitialize];
+        [self setActivityIndicatorImage:image];        
     }
     
     return self;
 }
 
 - (void)awakeFromNib
+{
+    [self customInitialize];
+}
+
+- (void)customInitialize
 {
     _duration            = 2.0f;
     _hidesWhenStopped    = YES;
@@ -78,15 +86,15 @@
 
 - (void)addRotationAnimationToLayer:(CALayer *)layer
 {
-    CABasicAnimation *rotation =
+    _animation =
     [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-    rotation.duration            = _duration;
-    rotation.removedOnCompletion = NO;
-    rotation.repeatCount         = HUGE_VALF;
-    rotation.fillMode            = kCAFillModeForwards;
-    rotation.fromValue           = @0.0;
-    rotation.toValue             = [NSNumber numberWithFloat:M_PI * 2];
-    [layer addAnimation:rotation forKey:@"rotate"];
+    _animation.duration            = _duration;
+    _animation.removedOnCompletion = NO;
+    _animation.repeatCount         = HUGE_VALF;
+    _animation.fillMode            = kCAFillModeForwards;
+    _animation.fromValue           = @0.0;
+    _animation.toValue             = [NSNumber numberWithFloat:M_PI * 2];
+    [layer addAnimation:_animation forKey:@"rotate"];
 }
 
 - (void)pauseLayer:(CALayer *)layer
@@ -140,7 +148,7 @@
 {
     if (_duration != duration) {
         _duration = duration;
-        _animationLayer.duration = duration;
+        _animation.duration = duration;
     }
 }
 

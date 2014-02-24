@@ -1,9 +1,9 @@
-WZActivityIndicatorView
+WZYActivityIndicatorView
 =====
 
 ## Requirements
 
-WZActivityIndicatorView requires iOS 5 or later. Also, it is deployed for an ARC environment.
+WZYActivityIndicatorView requires iOS 5 or later. Also, it is deployed for an ARC environment.
 
 ## License
 

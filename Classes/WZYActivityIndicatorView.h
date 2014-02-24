@@ -1,13 +1,13 @@
 //
-//  WZActivityIndicatorView.h
-//  WZActivityIndicatorView
+//  WZYActivityIndicatorView.h
+//  WZYActivityIndicatorView
 //
 //  Copyright (c) 2013 makoto_kw. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface WZActivityIndicatorView : UIView
+@interface WZYActivityIndicatorView : UIView
 
 @property (nonatomic) CFTimeInterval duration;
 @property (nonatomic) BOOL           hidesWhenStopped;

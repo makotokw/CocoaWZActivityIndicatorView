@@ -1,14 +1,14 @@
 //
-//  WZActivityIndicatorView.m
-//  WZActivityIndicatorView
+//  WZYActivityIndicatorView.m
+//  WZYActivityIndicatorView
 //
 //  Copyright (c) 2013 makoto_kw. All rights reserved.
 //
 
-#import "WZActivityIndicatorView.h"
+#import "WZYActivityIndicatorView.h"
 #import <QuartzCore/QuartzCore.h>
 
-@implementation WZActivityIndicatorView
+@implementation WZYActivityIndicatorView
 
 {
     CALayer *_animationLayer;

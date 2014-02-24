@@ -6,12 +6,12 @@
 //
 
 #import "ViewController.h"
-#import "WZActivityIndicatorView.h"
+#import "WZYActivityIndicatorView.h"
 
 @interface ViewController ()
 
 {
-    IBOutlet WZActivityIndicatorView *indicatorView;
+    IBOutlet WZYActivityIndicatorView *indicatorView;
 }
 
 @end
